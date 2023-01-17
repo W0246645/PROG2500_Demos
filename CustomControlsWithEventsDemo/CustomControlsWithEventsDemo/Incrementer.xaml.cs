@@ -13,26 +13,25 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace UserControlsDemo
+namespace CustomControlsWithEventsDemo
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Incrementer.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Incrementer : UserControl
     {
-        ClickerControl myClicker;
-
-        public MainWindow()
+        public event EventHandler IncrementMe;
+        public Incrementer()
         {
             InitializeComponent();
-            
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        public void Button_Click(object sender, RoutedEventArgs e)
         {
-            myClicker = new ClickerControl();
-            myClicker.theText = textMessage.Text;
-            MainContainer.Children.Add(myClicker);
+            if (this.IncrementMe != null)
+            {
+                this.IncrementMe(this, e);
+            }
         }
     }
 }

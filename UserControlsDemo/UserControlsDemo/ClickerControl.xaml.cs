@@ -16,23 +16,19 @@ using System.Windows.Shapes;
 namespace UserControlsDemo
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for ClickerControl.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ClickerControl : UserControl
     {
-        ClickerControl myClicker;
-
-        public MainWindow()
+        public string theText;
+        public ClickerControl()
         {
             InitializeComponent();
-            
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void ClickMeButton_Click(object sender, RoutedEventArgs e)
         {
-            myClicker = new ClickerControl();
-            myClicker.theText = textMessage.Text;
-            MainContainer.Children.Add(myClicker);
+            txtBox.Text = theText;
         }
     }
 }

@@ -6,7 +6,15 @@
         xmlns:local="clr-namespace:UserControlsDemo"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+    <StackPanel Orientation="Vertical">
+        <StackPanel>
+            <Button Content="Click" Click="Button_Click" FontSize="24"></Button>
+            <TextBox x:Name="textMessage"></TextBox>
+        </StackPanel>
+        <StackPanel x:Name="MainContainer" Orientation="Horizontal">
+            <local:ClickerControl HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <local:ClickerControl HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <local:ClickerControl></local:ClickerControl>
+        </StackPanel>
+    </StackPanel>
 </Window>
