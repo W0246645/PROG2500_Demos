@@ -38,5 +38,10 @@ namespace Northwind.Pages
 
             customerViewSource.Source = _context.Customers.Local.ToObservableCollection();
         }
+
+        private void Savebutton_Click(object sender, RoutedEventArgs e)
+        {
+            _context.SaveChanges();
+        }
     }
 }

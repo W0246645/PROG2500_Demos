@@ -14,6 +14,7 @@
     </Page.Resources>
     <StackPanel>
         <TextBlock Text="Customer page" FontSize="48"></TextBlock>
+        <Button x:Name="Savebutton" Content="Save Changes" Click="Savebutton_Click"></Button>
         <DataGrid x:Name="customerDataGrid" ItemsSource="{Binding Source={StaticResource customerViewSource}}" AutoGenerateColumns="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding CustomerId}" Header="Customer ID" IsReadOnly="True">
