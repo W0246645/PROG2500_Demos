@@ -20,6 +20,7 @@
                 <MenuItem Header="_Home" Click="HomeButton_Click"></MenuItem>
                 <MenuItem Header="_View Products" Click="ProductsButton_Click"></MenuItem>
                 <MenuItem Header="_Product Search" Click="ProductSearchButton_Click"></MenuItem>
+                <MenuItem Header="_Product Categories Search" Click="ProductCategoriesButton_Click"></MenuItem>
             </MenuItem>
         </Menu>
         <TextBlock Text="Welcome to Northwind!" 
@@ -36,6 +37,10 @@
                 <Button x:Name="ProductSearchButton"
                         Content="Search Products"
                         Click="ProductSearchButton_Click">
+                </Button>
+                <Button x:Name="ProductCategoriesButton"
+                        Content="Search Product Categories Products"
+                        Click="ProductCategoriesButton_Click">
                 </Button>
             </StackPanel>
         </ToolBar>

@@ -23,6 +23,7 @@ namespace NorthwindExercise_GrpB
         public Pages.HomePage homePage { get; set; } 
         public Pages.ProductsPage productsPage { get; set; }
         public Pages.ProductSearchPage productSearchPage { get; set; }
+        public Pages.ProductCategoriesPage categorysPage { get; set; }
 
         public MainWindow()
         {
@@ -30,6 +31,7 @@ namespace NorthwindExercise_GrpB
             homePage = new Pages.HomePage();
             productsPage = new Pages.ProductsPage();
             productSearchPage = new Pages.ProductSearchPage();
+            categorysPage = new Pages.ProductCategoriesPage();
 
             mainFrame.NavigationService.Navigate(homePage);
         }
@@ -47,6 +49,11 @@ namespace NorthwindExercise_GrpB
         private void ProductSearchButton_Click(object sender, RoutedEventArgs e)
         {
             mainFrame.NavigationService.Navigate(productSearchPage);
+        }
+
+        private void ProductCategoriesButton_Click(object sender, RoutedEventArgs e)
+        {
+            mainFrame.NavigationService.Navigate(categorysPage);
         }
     }
 }

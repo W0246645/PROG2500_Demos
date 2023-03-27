@@ -1,0 +1,56 @@
+﻿<Page x:Class="NorthwindExercise_GrpB.Pages.ProductCategoriesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:NorthwindExercise_GrpB.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ProductCategoriesPage">
+    <Page.Resources>
+        <CollectionViewSource x:Key="categoriesViewSource"/>
+    </Page.Resources>
+
+    <StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <TextBlock Text="Categories" Width="300"/>
+            <TextBlock Text="Search:"/>
+            <TextBox x:Name="txtSearch" Width="300"/>
+            <Button x:Name="searchBtn" Width="80" Content="Search" Click="searchBtn_Click"/>
+        </StackPanel>
+        <ListView x:Name="categoriesListView" Height="400">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Index}"/>
+                        <TextBlock Text="{Binding CatCount}"/>
+                        <Expander Header="View Categories">
+                            <ListView ItemsSource="{Binding Cat}">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="{Binding CategoryId}"/>
+                                            <TextBlock Text="{Binding CategoryName}"/>
+                                            <Expander Header="View Products">
+                                                <ListView ItemsSource="{Binding Products}">
+                                                    <ListView.ItemTemplate>
+                                                        <DataTemplate>
+                                                            <StackPanel Orientation="Horizontal">
+                                                                <TextBlock Text="{Binding ProductName}"/>
+                                                                <TextBlock Text="{Binding FormattedPrice}"/>
+                                                            </StackPanel>
+                                                        </DataTemplate>
+                                                    </ListView.ItemTemplate>
+                                                </ListView>
+                                            </Expander>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </Expander>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackPanel>
+</Page>
